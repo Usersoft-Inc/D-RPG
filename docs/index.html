@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Долбазавр RPG — текстовая RPG с ASCII-графикой</title>
+  <meta name="description" content="Текстовая RPG для Windows про самого тупого, но самого храброго динозавра. ASCII-графика, пошаговые бои, Долбо-удар и Метеор Погибели. Бесплатно.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon_32.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#download">Перейти к скачиванию</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img src="assets/icon_32.png" width="20" height="20" alt="">
+      <span>ДОЛБАЗАВР RPG</span>
+    </a>
+    <nav aria-label="Разделы">
+      <a href="#story">Сюжет</a>
+      <a href="#screens">Экраны</a>
+      <a href="#howto">Как играть</a>
+      <a href="#download">Скачать</a>
+      <a href="https://github.com/Usersoft-Inc/D-RPG" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="visually-hidden">Долбазавр RPG</h1>
+      <div class="term term--hero" id="title-term">
+        <div class="term__bar" aria-hidden="true">
+          <img src="assets/icon_32.png" width="16" height="16" alt="">
+          <span class="term__title">ДОЛБАЗАВР RPG</span>
+          <span class="term__hint">v1.0.0  F2 настройки · F11 полный экран</span>
+          <span class="term__btns">≡&nbsp;&nbsp;—&nbsp;&nbsp;✕</span>
+        </div>
+        <div class="term__screen" id="title-screen">
+          <pre class="scr" id="title-top" aria-hidden="true"></pre>
+          <div class="dino-row">
+            <button class="dino" id="dino" type="button" aria-label="Погладить Долбазавра">
+              <pre class="c-bgreen" id="dino-art"></pre>
+            </button>
+            <span class="roar" id="roar" aria-live="polite"></span>
+          </div>
+          <div class="scr menu-line" id="title-menu" role="group" aria-label="Главное меню">
+            <button type="button" data-key="1"><span class="c-byellow">[1]</span> Новая игра</button>
+            <button type="button" data-key="2"><span class="c-byellow">[2]</span> Загрузить</button>
+            <button type="button" data-key="3"><span class="c-byellow">[3]</span> Выход</button>
+          </div>
+          <pre class="scr c-grey" id="title-foot" aria-hidden="true"></pre>
+          <pre class="scr bye" id="bye" hidden></pre>
+        </div>
+      </div>
+      <div class="hero__text">
+        <p class="lead">Текстовая RPG с ASCII-графикой про самого тупого, но самого храброго динозавра. С неба упал Метеор Погибели, и спасать мир больше некому.</p>
+        <div class="cta">
+          <a class="btn btn--primary" href="https://github.com/Usersoft-Inc/D-RPG/releases/latest/download/Dolbazavr-RPG-1.0.0-setup.zip" rel="noopener">Скачать установщик <span>24,4 МБ</span></a>
+          <a class="btn" href="https://github.com/Usersoft-Inc/D-RPG/releases/latest/download/Dolbazavr-RPG-1.0.0-portable.zip" rel="noopener">Portable ZIP <span>12,3 МБ</span></a>
+        </div>
+        <p class="meta">Windows 10/11 · 64-бит · бесплатно · версия 1.0.0 · <a href="https://github.com/Usersoft-Inc/D-RPG" target="_blank" rel="noopener">исходники на GitHub</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="story" aria-labelledby="story-title">
+      <h2 id="story-title"><span class="prompt">&gt;</span> Сюжет</h2>
+      <div class="term">
+        <div class="term__bar" aria-hidden="true"><span class="term__title">НОВАЯ ИГРА</span></div>
+        <div class="term__screen">
+          <pre class="scr story" id="story-text"></pre>
+        </div>
+      </div>
+      <p class="note">Это не пересказ: так игра начинается на самом деле, буква за буквой.</p>
+    </section>
+
+    <section class="section" id="screens" aria-labelledby="screens-title">
+      <h2 id="screens-title"><span class="prompt">&gt;</span> Как это выглядит</h2>
+      <div class="screens">
+        <figure>
+          <div class="term">
+            <div class="term__bar" aria-hidden="true"><span class="term__title">КАРТА МИРА</span></div>
+            <div class="term__screen"><pre class="scr" id="map-screen" aria-hidden="true"></pre></div>
+          </div>
+          <figcaption>Три региона, от Папоротниковых лугов до Вулканического края. <span class="c-byellow">H</span> — деревня, <span class="c-bmagenta">?</span> — сундук, <span class="c-boss">B</span> — логово Метеора.</figcaption>
+        </figure>
+        <figure>
+          <div class="term">
+            <div class="term__bar" aria-hidden="true"><span class="term__title">ФИНАЛЬНЫЙ БОЙ</span></div>
+            <div class="term__screen"><pre class="scr" id="battle-screen" aria-hidden="true"></pre></div>
+          </div>
+          <figcaption>Пошаговые бои: кусайте, копите ярость и вовремя прячьте голову.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="howto" aria-labelledby="howto-title">
+      <h2 id="howto-title"><span class="prompt">&gt;</span> Как играть</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>В бою</h3>
+          <dl class="moves">
+            <dt><kbd>1</kbd> Атака</dt><dd>Обычный укус. Копит ярость.</dd>
+            <dt><kbd>2</kbd> Долбо-удар</dt><dd>Тратит 40 ярости и бьёт лбом в 2,5 раза сильнее, игнорируя броню.</dd>
+            <dt><kbd>3</kbd> Защита</dt><dd>Урон меньше примерно втрое и много ярости. Жмите, когда враг готовит мощный удар!</dd>
+            <dt><kbd>4</kbd> Зелье</dt><dd>Лечит половину здоровья. Из папоротника, натуральное.</dd>
+          </dl>
+        </div>
+        <div class="card">
+          <h3>Управление</h3>
+          <ul class="keys">
+            <li><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> или стрелки</span><span>идти по карте</span></li>
+            <li><span><kbd>I</kbd></span><span>герой и снаряжение</span></li>
+            <li><span><kbd>H</kbd></span><span>помощь</span></li>
+            <li><span><kbd>Q</kbd></span><span>в главное меню</span></li>
+            <li><span><kbd>F2</kbd></span><span>настройки: шрифт, тема, скорость текста, прозрачность</span></li>
+            <li><span><kbd>F11</kbd></span><span>полный экран</span></li>
+          </ul>
+          <p class="note">Русская раскладка тоже работает.</p>
+        </div>
+        <div class="card">
+          <h3>Мир</h3>
+          <ul class="regions">
+            <li><span class="c-bgreen">Папоротниковые луга</span><span class="c-bgreen">*</span></li>
+            <li><span class="c-byellow">Костяные холмы</span><span class="c-byellow">**</span></li>
+            <li><span class="c-bred">Вулканический край</span><span class="c-bred">***</span></li>
+          </ul>
+          <p>Чем дальше на восток, тем злее враги: слизни, гоблины-ворюги, скелеты, тролли и тираннозавр-задира. В деревне можно отдохнуть, закупиться в лавке старого трицератопса и сохраниться.</p>
+          <p class="note">Сундуки бывают… кусачими.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download" aria-labelledby="download-title">
+      <h2 id="download-title"><span class="prompt">&gt;</span> Скачать</h2>
+      <div class="grid grid--two">
+        <div class="card card--accent">
+          <h3>Установщик</h3>
+          <p class="size">Dolbazavr-RPG-1.0.0-setup.zip · 24,4 МБ · внутри setup.exe</p>
+          <ul class="ticks">
+            <li>Ставится в вашу папку пользователя, права администратора не нужны</li>
+            <li>Ярлыки на рабочем столе и в меню «Пуск»</li>
+            <li>Удаляется через «Приложения» Windows (Долбазавр будет грустить)</li>
+            <li>Сохранения — в %APPDATA%\Dolbazavr RPG</li>
+          </ul>
+          <a class="btn btn--primary" href="https://github.com/Usersoft-Inc/D-RPG/releases/latest/download/Dolbazavr-RPG-1.0.0-setup.zip" rel="noopener">Скачать установщик</a>
+        </div>
+        <div class="card">
+          <h3>Portable</h3>
+          <p class="size">Dolbazavr-RPG-1.0.0-portable.zip · 12,3 МБ</p>
+          <ul class="ticks">
+            <li>Распакуйте куда угодно, хоть на флешку</li>
+            <li>Запуск — «Dolbazavr RPG.exe»</li>
+            <li>Ничего не устанавливает и не трогает систему</li>
+            <li>Сохранения и настройки лежат рядом с игрой</li>
+          </ul>
+          <a class="btn" href="https://github.com/Usersoft-Inc/D-RPG/releases/latest/download/Dolbazavr-RPG-1.0.0-portable.zip" rel="noopener">Скачать ZIP</a>
+        </div>
+      </div>
+      <p class="note warn">У игры нет цифровой подписи, поэтому Windows может показать «Система Windows защитила ваш компьютер». Нажмите «Подробнее», затем «Выполнить в любом случае».</p>
+      <p class="note">Исходный код игры: <a href="https://github.com/Usersoft-Inc/D-RPG" target="_blank" rel="noopener">github.com/Usersoft-Inc/D-RPG</a></p>
+    </section>
+
+    <section class="section" id="eula" aria-labelledby="eula-title">
+      <h2 id="eula-title"><span class="prompt">&gt;</span> Пользовательское соглашение</h2>
+      <details class="eula">
+        <summary>Прочитать соглашение (мы знаем, что вы не будете)</summary>
+        <pre class="eula__text">ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ ДОЛБАЗАВРА
+Лицензионное соглашение с конечным динозавром. Редакция мезозойская.
+
+Пожалуйста, внимательно прочтите это соглашение. Мы знаем, что вы не будете.
+Никто не читает. Но если вы дочитали хотя бы до этого места, вы уже умнее
+Долбазавра. Поздравляем, это было несложно.
+
+
+1. ТЕРМИНЫ
+
+1.1. «Игра» — программа «Долбазавр RPG», состоящая из букв, символов
+     и непоколебимой веры в себя.
+1.2. «Пользователь» — вы. Да, вы. Не оглядывайтесь.
+1.3. «Долбазавр» — главный герой, обладающий интеллектом комнатного
+     папоротника и сердцем льва (сердце льва он, кстати, не съел, оно своё).
+1.4. «Метеор» — главный злодей. Все претензии по поводу вымирания
+     динозавров направляйте ему лично.
+1.5. «Долбо-удар» — приём, при котором голова используется не по назначению,
+     а по прямому назначению.
+
+
+2. ПРЕДМЕТ СОГЛАШЕНИЯ
+
+2.1. Правообладатель предоставляет Пользователю неисключительное право
+     играть в Игру столько, сколько выдержат его психика и родственники.
+2.2. Пользователь вправе устанавливать Игру на любое количество компьютеров,
+     ноутбуков, калькуляторов и умных холодильников.
+2.3. Декомпилировать Игру запрещено. Но если очень хочется — внутри просто
+     Python. Мы не обидимся. Долбазавр вообще не поймёт, что произошло.
+
+
+3. ОБЯЗАННОСТИ ПОЛЬЗОВАТЕЛЯ
+
+3.1. Не обижать Долбазавра.
+3.2. Не называть Долбазавра «ящерицей». Он очень переживает и потом
+     долго смотрит в одну точку. Хотя он и так долго смотрит в одну точку.
+3.3. Хотя бы раз применить Долбо-удар в бою с Метеором.
+3.4. Нажимать «Защиту», когда враг готовит мощный удар. Мы предупреждали.
+     Мы предупреждали ДВАЖДЫ.
+3.5. Своевременно поить Долбазавра зельями из папоротника.
+3.6. Не открывать подозрительные сундуки с зубами. Ну или открывать,
+     но потом не жаловаться.
+
+
+4. ОГРАНИЧЕНИЕ ОТВЕТСТВЕННОСТИ
+
+4.1. Игра предоставляется «КАК ЕСТЬ». Как есть — так и есть.
+     Как нет — так нет. Мы всё сказали.
+4.2. Правообладатель не несёт ответственности за:
+     а) бессонные ночи;
+     б) внезапное желание рычать на коллег;
+     в) привычку бодать дверные косяки;
+     г) споры о том, существовал ли метеор на самом деле;
+     д) вымирание (любое, включая вымирание свободного времени).
+4.3. Если ваш компьютер вымрет, значит, такова эволюция.
+
+
+5. КОНФИДЕНЦИАЛЬНОСТЬ
+
+5.1. Игра не собирает ваши персональные данные. Долбазавр не умеет считать
+     дальше трёх и искренне считает, что интернет — это вид папоротника.
+5.2. Сохранения хранятся на вашем компьютере, высеченные на виртуальных
+     каменных табличках. Не роняйте компьютер — таблички хрупкие.
+5.3. Телеметрия отсутствует. Единственное, что отслеживает Долбазавр, —
+     бабочку, которая пролетела мимо двадцать минут назад.
+
+
+6. ЗАКЛЮЧИТЕЛЬНЫЕ ПОЛОЖЕНИЯ
+
+6.1. Соглашение вступает в силу с момента нажатия «Я принимаю»
+     и действует до следующего метеора.
+6.2. Все споры разрешаются поединком на хвостах. Пользователь без хвоста
+     вправе использовать швабру.
+6.3. Если какой-либо пункт Соглашения будет признан недействительным,
+     остальные пункты сохраняют силу, а Долбазавр всё равно ничего не поймёт.
+6.4. Принимая Соглашение, вы подтверждаете, что вам не меньше 65 миллионов
+     лет, или что вы чувствуете себя на столько по понедельникам.
+
+
+Долбазавр Студиос, меловой период — 2026 г.
+
+                 __
+                / _)   Р-Р-Р-Р!
+       _.----._/ /     (подпись лапой)
+      /         /
+   __/ (  | (  |
+  /__.-'|_|--|_|</pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>v1.0.0 · (c) Долбазавр Студиос, Usersoft Inc. 2026–2028</span>
+    <a href="https://github.com/Usersoft-Inc/D-RPG" target="_blank" rel="noopener">GitHub: Usersoft-Inc/D-RPG</a>
+    <span>Ни один динозавр не пострадал. Кроме Метеора.</span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
